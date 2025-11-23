@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="logo">Social App</div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">🏠 Dashboard</a>
+                <a href="#" class="nav-item">📈 Statistics</a>
+                <a href="#" class="nav-item">⚙️ Settings</a>
+                <div class="separator"></div>
+                <button id="openPostModalBtn" class="new-post-btn">➕ Create New Post</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+    <h2>Hello, User</h2>
+    <div id="userProfile" class="user-profile">
+        <img src="https://via.placeholder.com/40" alt="User Avatar">
+        <span id="userEmail">user</span>
+        <div id="profileMenu" class="profile-menu">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+</header>
+
+
+            <section class="posts-controls">
+                <div class="search-sort">
+                    <input type="text" id="postSearch" placeholder="Search posts...">
+                    <select id="postSort">
+                        <option value="oldest">Newest First</option>
+                        <option value="newest">Oldest First</option>
+
+                    </select>
+                </div>
+            </section>
+
+            <section class="posts-section">
+                <h3>Your Timeline Posts</h3>
+                <div class="posts-container" id="postsContainer"></div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Create New Post</h3>
+            <form id="newPostForm">
+                <label for="postText">Post Content:</label>
+                <textarea id="postText" placeholder="What's on your mind?"></textarea>
+                
+                <label for="postImage">Upload Image (Optional):</label>
+                <input type="file" id="postImage" accept="image/*">
+                
+                <button type="submit" class="submit-post-btn">Publish Post</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Template -->
+    <template id="post-template">
+        <div class="post-card" data-post-id="">
+            <div class="post-header-content">
+                <p class="post-text-content"></p>
+                <img class="post-image" src="" alt="Post Image">
+            </div>
+            <div class="post-footer">
+                <div class="post-meta">
+                    <span class="post-date">Just now</span>
+                </div>
+                <div class="post-actions">
+                    <button class="like-button">
+                        <svg class="heart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+                                     2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                                     C13.09 3.81 14.76 3 16.5 3
+                                     19.58 3 22 5.42 22 8.5
+                                     c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span class="like-label">Like</span>
+                    </button>
+                    <button class="delete-button">🗑️ Delete</button>
+                </div>
+            </div>
+        </div>
+    </template>
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

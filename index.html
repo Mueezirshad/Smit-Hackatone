@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+  <h1>social application</h1>
+  <p class="tagline">connect with new friends</p>
+
+  <form id="loginForm" onsubmit="loginUser(event)">
+    <input type="email" id="loginEmail" placeholder="Email address" required />
+    <input type="password" id="loginPassword" placeholder="Password" required />
+    <button type="submit">Log In</button>
+  </form>
+
+  <button class="create-btn" onclick="showRegisterForm()">Create New Account</button>
+</div>
+
+<!-- Register Popup -->
+<div id="registerPopup" class="popup">
+  <form id="registerForm" onsubmit="registerUser(event)">
+    <h2 style="margin-bottom: 15px;">Sign Up</h2>
+    <input type="text" id="fullName" placeholder="Full Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button type="submit">Create Account</button>
+    <button type="button" onclick="closeRegisterForm()">Cancel</button>
+  </form>
+</div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>
